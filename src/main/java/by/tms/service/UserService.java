@@ -6,6 +6,7 @@ import by.tms.repository.AL.Users;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -24,7 +25,7 @@ public class UserService {
 
     public User getUser(CurUser curUser){return Ulist.getUser(curUser);}
 
-    public int findUser(CurUser curUser){return Ulist.findUser(curUser);}
+   /* public int findUser(CurUser curUser){return Ulist.findUser(curUser);}*/
 
-    public ArrayList<User> getAll(){return Ulist.getAllUsers();}
+    public List<User> getAll(){return Ulist.getAllUsers();}
 }

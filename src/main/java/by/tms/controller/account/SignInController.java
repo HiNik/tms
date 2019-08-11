@@ -32,11 +32,16 @@ public class SignInController {
   @PostMapping
   public ModelAndView log(@ModelAttribute("cUser") CurUser CurUser, BindingResult bindingResult,
                           ModelAndView modelAndView, HttpServletRequest request) {
-      if(userService.sigIn(CurUser)){
+      if(userService.findAdmin(CurUser)){
+          request.getSession().setAttribute("cAdmin",CurUser);
+          modelAndView.setViewName("redirect:/homepage");
+          return modelAndView;
+      }if(userService.sigIn(CurUser)){
         request.getSession().setAttribute("currentUser",CurUser);
         modelAndView.setViewName("redirect:/homepage");
      // modelAndView.addObject("userSession",CurUser);
-    }else modelAndView.setViewName("redirect:/signIn");
+    }else {modelAndView.setViewName("redirect:/signIn");}
+
       return modelAndView;
 
   }

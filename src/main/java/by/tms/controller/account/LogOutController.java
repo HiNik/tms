@@ -15,6 +15,7 @@ public class LogOutController {
     @GetMapping
     public ModelAndView logOut(@ModelAttribute("cUser") CurUser CurUser, ModelAndView modelAndView, HttpServletRequest request){
         request.getSession().setAttribute("currentUser",null);
+        request.getSession().setAttribute("cAdmin",null);
         modelAndView.setViewName("redirect:/homepage");
         return modelAndView;
     }

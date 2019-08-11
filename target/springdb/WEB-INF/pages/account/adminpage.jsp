@@ -15,12 +15,14 @@
 <h1> Welcome,${admin.name} </h1>
 <c:forEach var="user" items="${allUsers}">
     <tr>
-        <td><c: out value="${user}"/>1</td>
-        <td><c: out value="${user.name}"/>2</td>
-        <td><c: out value="${user.surname}"/>3</td>
-        <td><c: out value="${user.phone}"/>4</td>
-        <td><c: out value="${user.mail}"/>5</td>
+
+      <%-- <div> <td><c:out value="${user}"/></td></div>--%>
+          <div>Name:<td><c:out value="${user.name}"/></td></div>
+          <div>Surname:<td><c:out value="${user.surname}"/></td></div>
+          <div>phone:<td><c:out value="${user.phone}"/></td></div>
+          <div>Mail:<td><c:out value="${user.mail}"/></td></div>
     </tr>
+    <br>
 </c:forEach>
 <a href="${pageContext.request.contextPath}/homepage">HomePage</a>
 </body>

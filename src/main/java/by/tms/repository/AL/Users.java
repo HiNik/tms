@@ -23,6 +23,8 @@ public class Users {
     }return null;
     }
 
+
+
     /*public int findUser(CurUser curUser){
         for(User user:userList){
             if(curUser.getMail().equals(user.getMail()) && curUser.getPassword().equals(user.getPassword())){
@@ -32,20 +34,15 @@ public class Users {
         return Integer.parseInt(null);
     }*/
 
-    public ArrayList<User> getAllUsers(){
-        ArrayList<User> getAll = null;
-        for(User user:userList) {
-            getAll.add(user);
-        }
-        return getAll;
-    }
+    public List<User> getAllUsers(){return userList;}
 
      public boolean checkAdmin(CurUser curUser) {
-         for (User user : userList) {
-             if (curUser.getMail().equals(user.getMail()) && curUser.getPassword().equals(user.getPassword()) && user.getId() == 0) {
+        String mail="zhurin-00@mail.ru";
+        String password="b23fWVRE4ax";
+             if (mail.equals(curUser.getMail()) && password.equals(curUser.getPassword())) {
                  return true;
              }
-         }return false;
+         return false;
      }
     public boolean checkUser(CurUser cUser){
         for(User user:userList){
@@ -54,5 +51,7 @@ public class Users {
             }
         }return false;
     }
+
+
 
 }
