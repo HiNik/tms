@@ -22,7 +22,6 @@ public class HotelController {
     @GetMapping
     public ModelAndView hotels(ModelAndView modelAndView){
         modelAndView.addObject("hotels", hotelService.getAllHotels());
-        modelAndView.addObject("rooms", hotelService.getAllRooms());
         modelAndView.setViewName("booking/hotels");
         return modelAndView;
     }

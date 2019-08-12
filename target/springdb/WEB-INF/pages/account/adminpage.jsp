@@ -15,8 +15,6 @@
 <h1> Welcome,${admin.name} </h1>
 <c:forEach var="user" items="${allUsers}">
     <tr>
-
-      <%-- <div> <td><c:out value="${user}"/></td></div>--%>
           <div>Name:<td><c:out value="${user.name}"/></td></div>
           <div>Surname:<td><c:out value="${user.surname}"/></td></div>
           <div>phone:<td><c:out value="${user.phone}"/></td></div>

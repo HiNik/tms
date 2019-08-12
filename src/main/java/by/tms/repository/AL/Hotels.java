@@ -26,7 +26,8 @@ public class Hotels {
         }
     }
 
-    public ArrayList<Hotel> getAllHotels(){ return hotels;}
+    public ArrayList<Hotel> getAllHotels(){
+        return hotels;}
 
     public ArrayList<Room> getAllRooms(Hotel hotel){
         return hotel.getRooms();

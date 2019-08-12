@@ -19,11 +19,14 @@
 
             <li>Name:<c:out value="${hotel.hotelName}"/></li>
             <li>Description:<c:out value="${hotel.hotelDescription}"/></li>
-            <li>Rooms:<c:out value="${hotel.rooms.}"/></li>
+            <li>Rooms:<c:out value="${hotel.rooms}"/></li>
 
         </menu>
     </c:forEach>
 </s:form>
+<c:if test="${sessionScope.currentUser!= null }">
+    <a href="${pageContext.request.contextPath}/reservation">Reservation Room</a>
+</c:if>
 <c:if test="${sessionScope.cAdmin!= null }">
     <a href="${pageContext.request.contextPath}/hotels/newH">Add hotel</a>
     <a href="${pageContext.request.contextPath}/room/newR">Add Room</a>

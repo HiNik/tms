@@ -31,7 +31,7 @@ public class ReservationController {
         return modelAndView;
     }
 
-    @PostMapping(path = "/newreservation")
+    @PostMapping(path = "/new")
     public ModelAndView addReservation(@ModelAttribute("newreservation") Reservation reservation, ModelAndView modelAndView, HttpServletRequest request){
         CurUser curUser= (CurUser) request.getSession().getAttribute("currentUser");
         modelAndView.addObject("user",userService.getUser(curUser));
