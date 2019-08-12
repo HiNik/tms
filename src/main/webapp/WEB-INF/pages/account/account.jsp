@@ -18,6 +18,9 @@ Surname:${user.surname}<br>
 Mail:${user.mail}<br>
 Phone:${user.phone}<br>
 Password: ${user.password}<br>
+
+
+
 <a href="${pageContext.request.contextPath}/homepage">HomePage</a>
 </body>
 </html>

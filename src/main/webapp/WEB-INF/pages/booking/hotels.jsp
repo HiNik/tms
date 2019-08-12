@@ -13,10 +13,9 @@
     <title>Title</title>
 </head>
 <body>
-<s:form method="post" modelAttribute="hotels" action="/hotels">
+<s:form method="get" modelAttribute="hotels" action="/hotels">
     <c:forEach var="hotel" items="${hotels}">
         <menu aria-label="Hotels:">
-
             <li>Name:<c:out value="${hotel.hotelName}"/></li>
             <li>Description:<c:out value="${hotel.hotelDescription}"/></li>
             <li>Rooms:<c:out value="${hotel.rooms}"/></li>

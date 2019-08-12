@@ -2,6 +2,7 @@ package by.tms.controller.booking;
 
 import by.tms.entity.CurUser;
 import by.tms.entity.Reservation;
+import by.tms.service.HotelService;
 import by.tms.service.ReservationService;
 import by.tms.service.UserService;
 import org.springframework.stereotype.Controller;
@@ -17,16 +18,19 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping(path = "/reservation")
 public class ReservationController {
     private final ReservationService reservationService;
-    public final UserService userService;
+    private  final UserService userService;
+    private final HotelService hotelService;
 
-    public ReservationController(ReservationService reservationService, UserService userService) {
+    public ReservationController(ReservationService reservationService, UserService userService, HotelService hotelService) {
         this.reservationService = reservationService;
         this.userService = userService;
+        this.hotelService = hotelService;
     }
 
     @GetMapping
     public ModelAndView addReservation(ModelAndView modelAndView) {
         modelAndView.addObject("newreservation", new Reservation());
+        modelAndView.addObject("hotels", hotelService.getAllHotels());
         modelAndView.setViewName("booking/reservation");
         return modelAndView;
     }

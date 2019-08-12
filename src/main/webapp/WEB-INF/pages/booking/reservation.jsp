@@ -14,7 +14,18 @@
     <title>Title</title>
 </head>
 <body>
-<c:form modelAttribute="newreservation" method="post" action="/new">
+<c:form method="get" modelAttribute="hotels" action="/hotels">
+    <s:forEach var="hotel" items="${hotels}">
+        <menu aria-label="Hotels:">
+
+            <li>Name:<s:out value="${hotel.hotelName}"/></li>
+            <li>Description:<s:out value="${hotel.hotelDescription}"/></li>
+            <li>Rooms:<s:out value="${hotel.rooms}"/></li>
+
+        </menu>
+    </s:forEach>
+</c:form>
+<c:form modelAttribute="newreservation" method="post" action="reservation/new">
     Hotel Name: <c:input path="hotel.hotelName"/>
     <div><c:errors cssStyle="color: red;" path="hotel.hotelName"/></div>
     Type: <c:input path="room.type"/>
