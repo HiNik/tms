@@ -15,11 +15,13 @@
 <body>
 <s:form method="post" modelAttribute="hotels" action="/hotels">
     <c:forEach var="hotel" items="${hotels}">
-        <tr>
-            <td><c:out value="${hotel.hotelName}"/></td>
-            <td><c:out value="${hotel.hotelDescription}"/></td>
-            <td><c:out value="${hotel.rooms}"/></td>
-        </tr>
+        <menu aria-label="Hotels:">
+
+            <li>Name:<c:out value="${hotel.hotelName}"/></li>
+            <li>Description:<c:out value="${hotel.hotelDescription}"/></li>
+            <li>Rooms:<c:out value="${hotel.rooms}"/></li>
+
+        </menu>
     </c:forEach>
 </s:form>
 <a href="${pageContext.request.contextPath}/hotels/newH">Add hotel</a>

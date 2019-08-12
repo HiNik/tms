@@ -13,8 +13,8 @@
 </head>
 <body>
 <c:form modelAttribute="newroom" method="post" action="/hotels/addroom">
-    Hotel: <c:input path="hotel"/>
-    <div><c:errors cssStyle="color: red;" path="hotel"/></div>
+    Hotel: <c:input path=""/>
+    <div><c:errors cssStyle="color: red;" path="hotelName"/></div>
     Type <c:input path="type"/>
     <div><c:errors cssStyle="color: red;" path="type"/></div>
     Price <c:input path="price"/>

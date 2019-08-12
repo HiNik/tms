@@ -13,6 +13,7 @@
 </head>
 <body>
 <h1> Welcome,${user.name} </h1>
+
 Surname:${user.surname}<br>
 Mail:${user.mail}<br>
 Phone:${user.phone}<br>

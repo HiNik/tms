@@ -42,11 +42,12 @@ public class HotelController {
     public ModelAndView newRoom(ModelAndView modelAndView){
         modelAndView.setViewName("booking/newRoom");
         modelAndView.addObject("newroom",new Room());
+        modelAndView.addObject("hotelname",new String());
         return modelAndView;
     }
     @PostMapping(path="/addroom")
-    public ModelAndView newRoom(@ModelAttribute("newroom") Room room,ModelAndView modelAndView){
-        hotelService.addRoom(room);
+    public ModelAndView newRoom(@ModelAttribute("newroom") Room room,@ModelAttribute("hotelname") String name, ModelAndView modelAndView){
+        hotelService.addRoom(room, java.lang.String.valueOf(name));
         modelAndView.setViewName("redirect:/hotels");
         return modelAndView;
     }

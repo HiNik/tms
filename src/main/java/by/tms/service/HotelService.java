@@ -19,7 +19,7 @@ public class HotelService {
 
     public ArrayList<Hotel> getAllHotels(){return hotels.getAllHotels();}
 
-    public void addRoom( Room room){
-        hotels.addRoom(room);
+    public void addRoom( Room room,String name){
+        hotels.addRoom(room,name);
     }
 }
