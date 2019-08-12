@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 @Data
 @Entity
@@ -30,6 +31,8 @@ public class User implements Serializable {
   private String mail;
 
   private String password;
+
+  private ArrayList<Reservation> reservations;
 
   public User(String name, String surname, Integer age, String phone, String mail, String password,int id) {
     this.name = name;

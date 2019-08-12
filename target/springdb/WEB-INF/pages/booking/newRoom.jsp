@@ -12,7 +12,7 @@
     <title>Title</title>
 </head>
 <body>
-<c:form modelAttribute="newroom" method="post" action="/hotels/addroom">
+<c:form modelAttribute="newroom" method="post" action="/room/addroom">
     Hotel: <c:input path="hotelName"/>
     <div><c:errors cssStyle="color: red;" path="hotelName"/></div>
     Type <c:input path="type"/>

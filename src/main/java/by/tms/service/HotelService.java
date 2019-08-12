@@ -18,8 +18,11 @@ public class HotelService {
     public void addHotel(Hotel hotel){hotels.addHotel(hotel);}
 
     public ArrayList<Hotel> getAllHotels(){return hotels.getAllHotels();}
+    public ArrayList<Room> getAllRooms(Hotel hotel){return hotels.getAllRooms(hotel)}
 
-    public void addRoom( Room room,String name){
-        hotels.addRoom(room,name);
+    public void addRoom( Room room){
+        hotels.addRoom(room);
     }
+
+    public Hotel getHotelByName(String name){ return hotels.getHotelByName(name);}
 }

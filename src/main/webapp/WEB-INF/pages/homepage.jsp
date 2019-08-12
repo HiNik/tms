@@ -8,7 +8,6 @@
 <c:if test="${sessionScope.currentUser== null && sessionScope.cAdmin== null}">
     <a href="${pageContext.request.contextPath}/reg">Registration</a>
     <a href="${pageContext.request.contextPath}/signIn">Sig In</a>
-    <a href="${pageContext.request.contextPath}/hotels">hotels</a>
 </c:if>
 <c:if test="${sessionScope.currentUser!= null }">
     <a href="${pageContext.request.contextPath}/">Add post</a>
@@ -21,5 +20,6 @@
     <a href="${pageContext.request.contextPath}/adminpage">Admin Cabinet</a>
 </c:if>
 
+<a href="${pageContext.request.contextPath}/hotels">hotels</a>
 </body>
 </html>

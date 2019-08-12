@@ -33,7 +33,7 @@ public class RegistrationController {
   }
 
   @PostMapping
-  public ModelAndView setForm(@Valid @ModelAttribute("newUser") User user, BindingResult bindingResult,
+  public ModelAndView setForm( @ModelAttribute("newUser") User user, BindingResult bindingResult,
                               ModelAndView modelAndView) {
     userService.regUser(user);
     modelAndView.setViewName("redirect:/homepage");

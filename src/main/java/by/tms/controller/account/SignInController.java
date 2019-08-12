@@ -41,7 +41,6 @@ public class SignInController {
         modelAndView.setViewName("redirect:/homepage");
      // modelAndView.addObject("userSession",CurUser);
     }else {modelAndView.setViewName("redirect:/signIn");}
-
       return modelAndView;
 
   }

@@ -1,6 +1,7 @@
 package by.tms.repository.AL;
 
 import by.tms.entity.Hotel;
+import by.tms.entity.Reservation;
 import by.tms.entity.Room;
 import org.springframework.stereotype.Repository;
 
@@ -9,30 +10,38 @@ import java.util.ArrayList;
 @Repository
 public class Hotels {
     private static ArrayList<Hotel> hotels=new ArrayList<>();
-    private static ArrayList<Room> rooms=new ArrayList<>();
-    public void addHotel(Hotel hotel){hotels.add(hotel);}
+
+    public void addHotel(Hotel hotel){
+        hotel.setRooms(new ArrayList<>());
+        hotels.add(hotel);
+   }
 
 
 
-    public void addRoom( Room room,String name) {
+    public void addRoom( Room room) {
         for (Hotel hotel : hotels) {
-            if (name.equals(hotel.getHotelName())) {
+            if (room.getHotelName().equals(hotel.getHotelName())) {
                 hotel.getRooms().add(room);
             }
         }
-
-
-
-      /*  Room curRoom=new Room(room.getType(),room.getPrice());
-        Hotel hotel =getHotel(room.getHotel());
-        ArrayList<Room> rooms=null;
-        rooms=hotel.getRooms();
-        rooms.add(room);
-        hotel.setRooms(rooms);*/
-
     }
 
     public ArrayList<Hotel> getAllHotels(){ return hotels;}
+
+    public ArrayList<Room> getAllRooms(Hotel hotel){
+        return hotel.getRooms();
+    }
+
+    public Hotel getHotelByName(String name){
+        for(Hotel hotel:hotels){
+            if(name.equals(hotel.getHotelName())){
+                return hotel;
+            }
+        }
+        return null;
+    }
+
+
 
     private Hotel getHotel(String name){
         for(Hotel hotel:hotels){
@@ -41,6 +50,19 @@ public class Hotels {
             }
         }
         return null;
+    }
+
+    public void reservationRoom(Reservation reservation){
+        for(Hotel hotel:hotels){
+            if(reservation.getHotel().equals(hotel.getHotelName())){
+                for(Room room:hotel.getRooms()){
+                    if(reservation.getRoom().getType().equals(room.getType()) && reservation.getRoom().getPrice()==room.getPrice() ){
+                        hotel.getRooms().remove(room);
+                    }
+                }
+            }
+        }
+
     }
 
 }
